@@ -1,7 +1,10 @@
 import Resume from "../models/Resume.js";
 import cloudinary from "../config/cloudinary.js";
-import pdfParse from "pdf-parse";
 import fs from "fs";
+import { createRequire } from "module";
+
+const require = createRequire(import.meta.url);
+const pdfParse = require("pdf-parse");
 
 export const uploadResume = async (req, res) => {
   try {
